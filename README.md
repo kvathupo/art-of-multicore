@@ -6,7 +6,7 @@ Solutions to exercises in __The Art of Multiprocessor Programming__ (available f
 Using the following technology:
 
 * C++ (gcc 10)
-* Java (JDK 15)
+* Java (JDK 14)
 
 ## Why?
 
