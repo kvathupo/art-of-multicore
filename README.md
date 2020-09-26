@@ -8,6 +8,6 @@ Using the following technology:
 * C++ (gcc 10)
 * Java (JDK 14)
 
-## Why?
+## How do I start?
 
-To practice multi-threading.
+See a hint of how many threads can be run with `machine_check.cpp` and start!
