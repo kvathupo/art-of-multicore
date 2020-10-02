@@ -10,4 +10,5 @@ Using the following technology:
 
 ## How do I start?
 
-See a hint of how many threads can be run with `machine_check.cpp` and start!
+See a hint of how many threads can be run with `machine_check.cpp`. My machine can 
+run `4` threads. How about yours?
