@@ -1,15 +1,26 @@
 #pragma once
 #include <memory>
 #include <string>
-#include <Chopstick.h>
+#include <iostream>
+#include "Chopstick.h"
 
 class Person {
+public:
     std::shared_ptr<Chopstick> left;
     std::shared_ptr<Chopstick> right;
     const std::string name;
     bool is_eating {false};
 
-public:
+    Person(std::string name):
+        left{nullptr},
+        right{nullptr},
+        name{name}
+    {}
+    Person(std::string name, std::shared_ptr<Chopstick> left):
+        left{left},
+        right{nullptr},
+        name{name}
+    {}
     Person(std::string name, std::shared_ptr<Chopstick> left,
         std::shared_ptr<Chopstick> right):
         left{left},
@@ -38,6 +49,7 @@ public:
         if (is_eating) {
             left->available = true;
             right->available = true;
+            is_eating = false;
         } else {
             std::cout << name << " tried to start thinking without a meal!\n";
         }
