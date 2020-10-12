@@ -20,7 +20,7 @@ public:
         num_chairs{names.size()}
     {
         for (auto i = 0; i < names.size(); i++) {
-            utensils[i] = std::make_shared<Chopstick>();
+            utensils[i] = std::make_shared<Chopstick>(i + 1);
             if (i == 0) {
                 people[i] = std::make_unique<Person>(names[i], utensils[i]);
             } else if (i == names.size() - 1) {

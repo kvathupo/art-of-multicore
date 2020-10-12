@@ -30,14 +30,18 @@ public:
 
     // methods
     void eat() {
-        if (left->available) {
-            left->available = false;
-            left->owner = name;
+        auto lower_chopstick = (left->priority < right->priority) ? left : right;
+        auto higher_chopstick = (left->priority < right->priority) ? right : left;
+        
+        if (lower_chopstick->available) {
+            lower_chopstick->available = false;
+            lower_chopstick->owner = name;
+            
+            if (higher_chopstick->available) {
+                higher_chopstick->available = false;
+                higher_chopstick->owner = name;
+            }
         } 
-        if (right->available) {
-            right->available = false;
-            right->owner = name;
-        }
 
         bool can_eat = (right->owner == name && left->owner == name) ? true : false;
         is_eating = can_eat;
@@ -46,12 +50,10 @@ public:
     }
 
     void think() {
-        if (is_eating) {
-            left->available = true;
-            right->available = true;
-            is_eating = false;
-        } else {
-            std::cout << name << " tried to start thinking without a meal!\n";
-        }
+        is_eating = false;
+        left->available = (left->available == false && left->owner == name) ? 
+            true : left->available;
+        right->available = (right->available == false && right->owner == name) ? 
+            true : right->available;
     }
 };
