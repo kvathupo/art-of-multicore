@@ -11,4 +11,6 @@ public:
     Chopstick(int priority):
         priority{priority}
     {}
+    Chopstick(const Chopstick&) = default;
+    Chopstick& operator=(const Chopstick&) = default;
 };
