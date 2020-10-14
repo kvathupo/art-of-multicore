@@ -71,4 +71,11 @@ public:
 
         this->people[idx]->think();
     }
+    void print_status() {
+        std::string is_eating;
+        for (const auto& person : people) {
+            is_eating = person->is_eating ? " is eating\n" : " not eating\n";
+            std::cout << person->name << is_eating;
+        }
+    }
 };
