@@ -1,6 +1,3 @@
-# TODO
-* [C++11 memory model](https://stackoverflow.com/questions/26787086/atomic-pointers-in-c-and-passing-objects-between-threads)
-and how to use atomics with generic objects (mutex, atomic pointer, or make trivially constructible?).
 # Exercise 1
 ### Terminology
 * __Starvation:__ There exists a scenario where at least one thread is blocked,
@@ -20,4 +17,5 @@ adjacent diners think.
 
 
 ## References
+* [Atomic pointer](https://stackoverflow.com/questions/26787086/atomic-pointers-in-c-and-passing-objects-between-threads)
 * [Lecture Notes](http://web.eecs.utk.edu/~mbeck/classes/cs560/560/notes/Dphil/lecture.html)
