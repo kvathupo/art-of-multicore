@@ -2,6 +2,8 @@
 An internal list of interesting topics for me to write about!
 
 List:
+* How do I use atomics for general classes, which need not be trivially copyable?
+    * Use an atomic to a pointer to that object
 * How to iterate through a container of unique pointers?
     * [Answer](https://stackoverflow.com/questions/20292682/iterating-through-vectorunique-ptrmytype-using-c11-for-loops)
 * Why do I have to use `std::ref` for reference thread arguments?
