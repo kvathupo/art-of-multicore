@@ -33,8 +33,6 @@ public:
             }
         }
     }
-    Table(const Table&) = default;
-    Table& operator=(const Table&) = default;
 
     // Get by name
     const std::unique_ptr<Person>& get(std::string name) {

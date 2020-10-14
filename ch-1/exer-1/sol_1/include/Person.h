@@ -27,8 +27,6 @@ public:
         right{right},
         name{name}
     {}
-    Person(const Person&) = default;
-    Person& operator=(const Person&) = default;
 
     // methods
     void eat() {
