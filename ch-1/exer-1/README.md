@@ -1,4 +1,8 @@
 # Exercise 1
+_How do we know we solved the Dining Philosopher's problem?_ The behavior of each
+philosopher is programmed such that they constantly attempt to eat, and always
+attempt to stop eating. If solved, no philosopher is eating. 
+
 ### Terminology
 * __Starvation:__ There exists a scenario where at least one thread is blocked,
 and can never progress. 
