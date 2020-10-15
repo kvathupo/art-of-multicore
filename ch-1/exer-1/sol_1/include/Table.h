@@ -73,6 +73,7 @@ public:
     }
     void print_status() {
         std::string is_eating;
+        std::cout << "\nTable Status:\n";
         for (const auto& person : people) {
             is_eating = person->is_eating ? " is eating\n" : " not eating\n";
             std::cout << person->name << is_eating;
