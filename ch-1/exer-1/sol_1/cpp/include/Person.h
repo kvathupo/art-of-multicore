@@ -50,7 +50,8 @@ public:
     }
 
     void think() {
-        is_eating = false;
+        is_eating = ((left->available == false && left->owner == name) &&
+            (right->available == false && right->owner == name)) ? false : is_eating;
         left->available = (left->available == false && left->owner == name) ? 
             true : left->available;
         right->available = (right->available == false && right->owner == name) ? 
