@@ -1,6 +1,7 @@
 package include;
 
 import java.util.LinkedHashMap;
+import java.util.ArrayList;
 
 public class Table {
     private LinkedHashMap<String, Person> people;
