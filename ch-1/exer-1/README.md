@@ -21,23 +21,6 @@ highest and lowest ranked forks) are eating, there is a possibility diner
 - [x] Deadlock: If two philosophers cannot eat, they merely wait until their
 adjacent diners think.
 
-## Compilation
-### C++
-1. Compile without thread sanitizers
-```bash
-g++ -std=c++17 -I ./include/ ./lib/*.cpp ./main/main.cpp -lpthread
-```
-### Java
-1. Compile the includes into a jar
-```bash
-jar cf includes.jar include/*.java
-```
-2. Compile with correct classpath
-```bash
-javac -cp ".:includes.jar;" Main.java
-```
-
-
 ## References
 * [Atomic pointer](https://stackoverflow.com/questions/26787086/atomic-pointers-in-c-and-passing-objects-between-threads)
 * [Lecture Notes](http://web.eecs.utk.edu/~mbeck/classes/cs560/560/notes/Dphil/lecture.html)
