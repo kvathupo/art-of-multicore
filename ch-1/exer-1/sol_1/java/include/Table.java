@@ -2,25 +2,26 @@ package include;
 
 import java.util.LinkedHashMap;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Table {
-    private LinkedHashMap<String, Person> people;
-    private ArrayList<Chopstick> utensils;
+    private LinkedHashMap<String, Person> people = new LinkedHashMap<>();
+    private ArrayList<Chopstick> utensils = new ArrayList<>();
     
     // Constructors
     public Table(String ...names) {
         for (int i = 0; i < names.length; i++) {
-            people.put(name, new Person(names[i]));
+            people.put(names[i], new Person(names[i]));
             utensils.add(new Chopstick(false, "", i));
             if (i == 0) {
-                people.get(name).right = utensils.get(0);
+                people.get(names[i]).right = utensils.get(0);
             } else if (i == names.length - 1) {
-                people.get(name).left = utensils.get(i - 1);
-                people.get(name).right = utensils.get(i);
+                people.get(names[i]).left = utensils.get(i - 1);
+                people.get(names[i]).right = utensils.get(i);
                 people.get(names[0]).left = utensils.get(i);
             } else {
-                people.get(name).left = utensils.get(i - 1);
-                people.get(name).right = utensils.get(i);
+                people.get(names[i]).left = utensils.get(i - 1);
+                people.get(names[i]).right = utensils.get(i);
             }
         }
     }
@@ -28,7 +29,7 @@ public class Table {
     /*
      *  Methods
      */
-    public Person get(String name) {
+    public synchronized Person get(String name) {
         return people.get(name);
     }
     // Eating
@@ -59,7 +60,8 @@ public class Table {
             StringBuilder bldr = new StringBuilder();
             bldr.append(ele.getKey());
             bldr.append(" is ");
-            bldr.append((ele.getValue().is_eating) ? " eating!" : " not eating!");
+            String str = (ele.getValue().is_eating) ? "eating!" : "not eating!";
+            bldr.append(str);
             System.out.println(bldr.toString());
         }
     }

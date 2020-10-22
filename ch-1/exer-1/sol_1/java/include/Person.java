@@ -1,6 +1,6 @@
 package include;
 
-public Person {
+public class Person {
     public Chopstick left;
     public Chopstick right;
     public String name;
@@ -39,7 +39,7 @@ public Person {
             (right.owner.equals(name) && right.is_available == false)) ? false : is_eating;
         left.is_available = (left.owner.equals(name) && !left.is_available) ? 
             true : left.is_available;
-        right.is_available = (right.owner.equals(name) 7& !right.is_available) ? 
+        right.is_available = (right.owner.equals(name) && !right.is_available) ? 
             true : right.is_available;
     }
 }
